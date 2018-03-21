@@ -233,9 +233,26 @@
     <Compile Include="Migrations\201803211804370_UpdateDatabaseWithMembershipTypeName.Designer.cs">
       <DependentUpon>201803211804370_UpdateDatabaseWithMembershipTypeName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803211818490_BirthdayCustomer.cs" />
+    <Compile Include="Migrations\201803211818490_BirthdayCustomer.Designer.cs">
+      <DependentUpon>201803211818490_BirthdayCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803211824285_RequiredNameMembershipType.cs" />
+    <Compile Include="Migrations\201803211824285_RequiredNameMembershipType.Designer.cs">
+      <DependentUpon>201803211824285_RequiredNameMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803211900355_PropsAddedMovie.cs" />
+    <Compile Include="Migrations\201803211900355_PropsAddedMovie.Designer.cs">
+      <DependentUpon>201803211900355_PropsAddedMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803211901051_InsertGenre.cs" />
+    <Compile Include="Migrations\201803211901051_InsertGenre.Designer.cs">
+      <DependentUpon>201803211901051_InsertGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -306,6 +323,7 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -350,6 +368,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803211804370_UpdateDatabaseWithMembershipTypeName.resx">
       <DependentUpon>201803211804370_UpdateDatabaseWithMembershipTypeName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803211818490_BirthdayCustomer.resx">
+      <DependentUpon>201803211818490_BirthdayCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803211824285_RequiredNameMembershipType.resx">
+      <DependentUpon>201803211824285_RequiredNameMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803211900355_PropsAddedMovie.resx">
+      <DependentUpon>201803211900355_PropsAddedMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803211901051_InsertGenre.resx">
+      <DependentUpon>201803211901051_InsertGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
