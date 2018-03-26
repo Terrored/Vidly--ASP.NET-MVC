@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using VidlyV3.Models;
 
-namespace VidlyV3.Models
+namespace VidlyV3.Dtos
 {
-    public class Movie
+    public class MovieDto
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -16,23 +16,21 @@ namespace VidlyV3.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        
-        public Genre Genre { get; set; }
 
-        [Display(Name="Genre")]
+       
+
         [Required]
         public byte GenreId { get; set; }
+
         [Required]
         public DateTime DateAdded { get; set; }
+
         [Required]
-        [Display(Name = "Release Date")]
         public DateTime ReleaseDate { get; set; }
 
-        [Display(Name = "Number in Stock")]
+        
         [Required]
-        [Range(0,20)]
+        [Range(0, 20)]
         public byte NumberInStock { get; set; }
     }
-
-    // /movies/random
 }
