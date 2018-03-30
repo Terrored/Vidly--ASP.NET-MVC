@@ -20,7 +20,7 @@ namespace VidlyV3.Dtos
        
 
         [Required]
-        public byte GenreId { get; set; }
+        public GenreDto Genre { get; set; }
 
         [Required]
         public DateTime DateAdded { get; set; }
