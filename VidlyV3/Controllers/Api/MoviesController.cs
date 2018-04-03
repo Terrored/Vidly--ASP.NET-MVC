@@ -21,18 +21,29 @@ namespace VidlyV3.Controllers.Api
         }
 
         // GET /api/movies
-        [Authorize(Roles = RoleName.CanManageMovies)]
-        public IHttpActionResult GetMovies()
-        {
-           var movieDto= _context.Movies.Include(c=>c.Genre)
-                .ToList()
-                .Select(Mapper.Map<Movie,MovieDto>);
+        //[Authorize(Roles = RoleName.CanManageMovies)]
+        //public IHttpActionResult GetMovies()
+        //{
+        //   var movieDto= _context.Movies.Include(c=>c.Genre)
+        //        .ToList()
+        //        .Select(Mapper.Map<Movie,MovieDto>);
 
-            return Ok(movieDto);
+        //    return Ok(movieDto);
+        //}
+
+        public IEnumerable<MovieDto> GetMovies(string query = null)
+        {
+            var moviesQuery = _context.Movies.Include(m => m.Genre).Where(m => m.NumberAvailable > 0);
+            
+                if (!String.IsNullOrWhiteSpace(query))
+                moviesQuery = moviesQuery.Where(m => m.Name.Contains(query));
+            
+                return moviesQuery.ToList().Select(Mapper.Map<Movie, MovieDto>);
         }
+    
 
         //GET /api/movies/1
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        //[Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult GetMovie(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
