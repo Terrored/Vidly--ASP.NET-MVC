@@ -32,6 +32,9 @@ namespace VidlyV3.Models
         [Required]
         [Range(0,20)]
         public byte NumberInStock { get; set; }
+
+        
+        public byte NumberAvailable { get; set; }
     }
 
     // /movies/random

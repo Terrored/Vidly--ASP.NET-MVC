@@ -21,7 +21,7 @@ namespace VidlyV3.Controllers.Api
         }
 
         // GET /api/movies
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult GetMovies()
         {
            var movieDto= _context.Movies.Include(c=>c.Genre)
@@ -32,7 +32,7 @@ namespace VidlyV3.Controllers.Api
         }
 
         //GET /api/movies/1
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult GetMovie(int id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
@@ -45,7 +45,7 @@ namespace VidlyV3.Controllers.Api
         }
 
         //POST /api/movies
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [HttpPost]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
@@ -61,8 +61,8 @@ namespace VidlyV3.Controllers.Api
             return Created(new Uri(Request.RequestUri + "/" + movie.Id), movieDto);
 
         }
-
-       // PUT /api/movies/1
+        [Authorize(Roles = RoleName.CanManageMovies)]
+        // PUT /api/movies/1
         [HttpPut]
 
         public IHttpActionResult UpdateMovie(int id, MovieDto movieDto)
@@ -82,7 +82,7 @@ namespace VidlyV3.Controllers.Api
             return Ok();
 
         }
-
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [HttpDelete]
         public void DeleteMovie(int id)
         {
